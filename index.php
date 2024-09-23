@@ -55,6 +55,7 @@ if (!$log) {
         foreach ($users as $user) {
             if ($user['username'] === $username && $user['password'] === $password) {
                 $logIn = true; 
+                $log = true;
                 break; 
             }
         }
@@ -64,7 +65,13 @@ if (!$log) {
             $_SESSION['log'] = true; 
           echo '<div class="profile container">';
           echo '<div class="profile-picture">';
-          echo '<img src="./assets/female.jpg" alt="">';
+            if($user['gender']==='male'){
+                echo '<img src="./assets/male.webp" alt="">';
+            }elseif($user['gender']=== 'female'){
+                echo '<img src="./assets/female.jpg" alt="">';
+            }else{
+                echo '<img src="./assets/kid.avif" alt="">';
+            }
           echo '</div>';
           echo '<div class="profile-info">';
           echo '<h2>Name:' . $user['username'] . "</h2>";
@@ -74,17 +81,23 @@ if (!$log) {
           echo '<h2>Name:' . $user['gender'] . "</h2>";
           echo '</div>';
           echo '</div>';
-            exit();
-        } else {
-            echo '<p style="color:red;">Please, try again.</p>';
-        }
+
+        } 
     }
 
-    echo '<form action="./index.php" method="post" class="log-in">';
-    echo '<input type="text" placeholder="Username" required name="username">';
-    echo '<input type="password" placeholder="Password" required name="password">';
-    echo '<input type="submit" value="Log in" class="log-in-btn">';
-    echo '</form>';
+
+    if(!$log){
+        echo '<form action="./index.php" method="post" class="log-in">';
+        echo '<input type="text" placeholder="Username" required name="username">';
+        echo '<input type="password" placeholder="Password" required name="password">';
+        echo '<input type="submit" value="Log in" class="log-in-btn">';
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && !$logIn) {
+            echo '<p style="color:red;">Please, try again.</p>';
+        }
+        echo '</form>';
+       
+    }
+
 } 
 
 
