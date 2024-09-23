@@ -85,9 +85,7 @@ if (!$log) {
     echo '<input type="password" placeholder="Password" required name="password">';
     echo '<input type="submit" value="Log in" class="log-in-btn">';
     echo '</form>';
-} else {
-    echo 'Hello! You are logged in.';
-}
+} 
 
 
 
