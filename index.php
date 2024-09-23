@@ -35,55 +35,66 @@
 
     <!-- log in  -->
 
-   
-
- 
-
-    <?php 
-
-$log= false;
-
-if(!$log){
-    include("form.php");
-}
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
 
 
 
+<?php 
 
-    $logIn = false;
 
-foreach($users as $user) {
-    if($user['username'] === $username && $user['password'] === $password){
-        $logIn = true;
-        $log = true;
-        break;
-    }else{
+$log = isset($_SESSION['log']) ? $_SESSION['log'] : false;
+
+
+if (!$log) {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
         $logIn = false;
-        // $log = false;
-    };
-};
 
 
+        foreach ($users as $user) {
+            if ($user['username'] === $username && $user['password'] === $password) {
+                $logIn = true; 
+                break; 
+            }
+        }
 
-if($logIn){
-   include('profile.php');
-}else{
-    echo '<p style="color:red;">' . "Please , Try again";
-}
+       
+        if ($logIn) {
+            $_SESSION['log'] = true; 
+          echo '<div class="profile container">';
+          echo '<div class="profile-picture">';
+          echo '<img src="./assets/female.jpg" alt="">';
+          echo '</div>';
+          echo '<div class="profile-info">';
+          echo '<h2>Name:' . $user['username'] . "</h2>";
+          echo '<h2>Name:' . $user['lastname'] . "</h2>";
+          echo '<h2>Name:' . $user['email'] . "</h2>";
+          echo '<h2>Name:' . $user['tel'] . "</h2>";
+          echo '<h2>Name:' . $user['gender'] . "</h2>";
+          echo '</div>';
+          echo '</div>';
+            exit();
+        } else {
+            echo '<p style="color:red;">Please, try again.</p>';
+        }
+    }
 
-
-
-
+    echo '<form action="./index.php" method="post" class="log-in">';
+    echo '<input type="text" placeholder="Username" required name="username">';
+    echo '<input type="password" placeholder="Password" required name="password">';
+    echo '<input type="submit" value="Log in" class="log-in-btn">';
+    echo '</form>';
+} else {
+    echo 'Hello! You are logged in.';
 }
 
 
 
 ?> 
+
+
+   
 
     <!-- footer  -->
 

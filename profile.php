@@ -21,22 +21,24 @@
 
 
 
-    <div class="profile container">
+    
 
-        <div class="profile-picture">
-            <img src="./assets/female.jpg" alt="">
-        </div>
+        
+            
+        
 
 
-        <div class="profile-info">
-            <h2>Name: Gega</h2>
-            <h2>LastName: Jikuridze</h2>
-            <h2>Email: gega@gmail.com</h2>
-            <h2>Tel:500000000</h2>
-            <h2>Gender: male</h2>
-        </div>
+        
+            
+            
+            
+            
+            
+        
 
     </div>
+
+    
 
 
 
