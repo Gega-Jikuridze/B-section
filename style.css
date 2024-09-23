@@ -1,0 +1,187 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+
+.container{
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 100px;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    height: 100%;
+}
+
+
+/* header  */
+
+header{
+    background-color: black;
+    box-shadow: 3px 3px 3px white;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;    
+}
+
+.logo a{
+    background-color: white;
+    color: black;
+    padding: 3px;
+    font-size: 30px;
+    font-weight: 900;
+    border: 3px solid white;
+    display: flex;
+    transition: .2s;
+    align-items: center;
+}
+
+.logo span{
+    background-color: black;
+    color: white;
+    padding: 3px;
+    margin-left: 2px;
+}
+
+.logo a:hover{
+    transform: scale(1.1);
+}
+
+
+.nav{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.nav a{
+    color: white;
+    font-size: 20px;
+    padding: 3px 10px;
+    transition: .2s;
+    font-weight: 700;
+}
+
+.nav a:hover{
+    transform: translateY(10px);
+}
+
+
+
+
+/* footer  */
+
+footer{
+    background-color: black;
+    box-shadow: -3px -3px 3px white;
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+.footer-nav{
+    display: flex;
+    gap: 20px;
+}
+
+
+.footer-nav a{
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    transition: .2s;
+}
+
+.footer-nav a:hover{
+    transform: translateY(-10px);
+}
+
+
+
+
+
+/* log in form  */
+
+.log-in{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: max-content;
+    align-items: center;
+    padding: 50px;
+    box-shadow: 3px 3px 5px white;
+    border-radius: 20px;
+    background-color: black;
+}
+
+
+.log-in input{
+    background-color: white;
+    color: black;
+    font-style: italic;
+    font-size: 15px;
+    font-weight: 900;
+    padding: 3px;
+}
+
+.log-in-btn{
+    background-color: black !important;
+    color: white !important;
+    padding: 5px 10px;
+    font-size: 15px;
+    font-weight: 900;
+    box-shadow: 1px 1px 5px white;
+}
+
+
+
+
+/* profile  */
+
+.profile{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.profile-picture{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    height: 450px;
+    border-radius: 100%;
+    border: 3px solid black;
+}
+
+.profile-picture img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
