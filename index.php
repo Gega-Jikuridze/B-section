@@ -35,50 +35,55 @@
 
     <!-- log in  -->
 
-    <form action="./index.php" method="post" class="log-in">
+   
 
-        <input type="text" placeholder="Username" required name="username">
-        <input type="password" placeholder="Password" required name="password">
-        <input type="submit" value="Log in" class="log-in-btn">
-
-        <?php 
-
-
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $username = $_POST['username'];
-                $password = $_POST['password'];
-
-              
-
-                $logIn = false;
-
-            foreach($users as $user) {
-                if($user['username'] === $username && $user['password'] === $password){
-                    $logIn = true;
-                    break;
-                }else{
-                    $logIn = false;
-                };
-            };
-
-            if($logIn){
-                header("Location: profile.php");
-                exit();
-            }else{
-                echo '<p style="color:red;">' . "Please , Try again";
-            }
-
-
-            }
-
-            
-            
-        ?> 
-
-    </form>
  
 
+    <?php 
 
+$log= false;
+
+if(!$log){
+    include("form.php");
+}
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+
+
+
+    $logIn = false;
+
+foreach($users as $user) {
+    if($user['username'] === $username && $user['password'] === $password){
+        $logIn = true;
+        $log = true;
+        break;
+    }else{
+        $logIn = false;
+        // $log = false;
+    };
+};
+
+
+
+if($logIn){
+   include('profile.php');
+}else{
+    echo '<p style="color:red;">' . "Please , Try again";
+}
+
+
+
+
+}
+
+
+
+?> 
 
     <!-- footer  -->
 

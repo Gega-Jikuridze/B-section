@@ -19,23 +19,6 @@
 
 
 
-    <!-- header  -->
-
-    <header>
-        <div class="header container">
-            <div class="logo">
-                <a href="./index.php">B-<span>Section</span></a>
-            </div>
-
-            <div class="nav">
-                <a href="./profile.php">Home</a>
-                <a href="./about.php">About</a>
-                <a href="./persons.php">Persons</a>
-                <a href="./contact.php">Contact us</a>
-            </div>
-        </div>
-    </header>
-
 
 
     <div class="profile container">
@@ -58,21 +41,7 @@
 
 
 
-    <!-- footer  -->
 
-    <footer>
-        <div class="footer container">
-            <div class="logo">
-                <a href="#">B-<span>Section</span></a>
-            </div>
-
-            <div class="footer-nav">
-                <a href="#"><i class='bx bx-phone'></i>+995 555 555</a>
-                <a href="#"><i class='bx bx-envelope' ></i>b-section@gmail.com</a>
-                <a href="#"><i class='bx bx-location-plus'></i>Georgia</a>
-            </div>
-        </div>
-    </footer>
     
 </body>
 </html>
